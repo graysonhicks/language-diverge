@@ -10,4 +10,19 @@ const IndexPage = () => (
   </div>
 )
 
+export const query = graphql`
+  query LanguagesQuery {
+    allMongodbCloudDouments {
+      edges {
+        node {
+          id
+          url
+          name
+        }
+      }
+    }
+  }
+`
+
+
 export default IndexPage
