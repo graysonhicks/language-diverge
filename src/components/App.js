@@ -11,7 +11,7 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			computers: []
+			stackOverFlowData: {}
 		};
 
 		this.getChartData = this.getChartData.bind(this);
@@ -22,6 +22,7 @@ class App extends Component {
 		if (response.status >= 200 && response.status < 300) {
 			return response;
 		}
+
 		const error = new Error(`HTTP Error ${response.statusText}`);
 		error.status = response.statusText;
 		error.response = response;
@@ -38,24 +39,16 @@ class App extends Component {
 	setChartData(category, data) {
 		var newState = {};
 		newState[category] = data;
-		this.setState(newState, function() {
-			console.log(this.state);
-		});
+		this.setState(newState);
 	}
-
-	componentDidMount() {}
-
 	render() {
 		return (
 			<div className="App">
 				<header className="App-header">
 					<img src={logo} className="App-logo" alt="logo" />
-					<h1 className="App-title">Welcome to React</h1>
+					<h1 className="App-title">Language Diverge</h1>
 				</header>
-				<p className="App-intro">
-					To get started, edit <code>src/App.js</code> and save to reload.
-				</p>
-				<StackOverflow getChartData={this.getChartData} setChartData={this.setChartData} />
+				<StackOverflow getChartData={this.getChartData} stackOverFlowData={this.state.stackOverFlowData} setChartData={this.setChartData} />
 			</div>
 		);
 	}
