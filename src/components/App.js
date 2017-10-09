@@ -3,6 +3,7 @@ import logo from "../logo.svg";
 import "../styles/App.css";
 
 import StackOverflow from "./StackOverflow";
+import Historic from "./Historic";
 
 const apiRoute = "https://language-diverge.herokuapp.com/";
 
@@ -49,6 +50,7 @@ class App extends Component {
 					<h1 className="App-title">Language Diverge</h1>
 				</header>
 				<StackOverflow getChartData={this.getChartData} stackOverFlowData={this.state.stackOverFlowData} setChartData={this.setChartData} />
+				<Historic getChartData={this.getChartData} historicData={this.state.historicData} setChartData={this.setChartData} />
 			</div>
 		);
 	}
