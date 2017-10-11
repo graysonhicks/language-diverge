@@ -5,15 +5,16 @@ import { Line } from "react-chartjs-2";
 
 class StackOverflow extends Component {
 	componentDidMount() {
-		this.props.getChartData("computer").then(json => this.props.setChartData("stackOverFlowData", json));
+		// this.props.getChartData("computer").then(json => this.props.setChartData("stackOverFlowData", json));
 	}
 
 	render() {
+		console.log(this.props);
 		return (
-			<div className="StackOverflow">
+			<div className="StackOverflow chart">
 				<Line
 					data={{
-						labels: this.props.stackOverFlowData.labels,
+						labels: [12, 3, 4],
 						datasets: [
 							{
 								data: [20, 30, 40]

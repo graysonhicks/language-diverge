@@ -11,12 +11,7 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			stackOverFlowData: {}
-		};
-
 		this.getChartData = this.getChartData.bind(this);
-		this.setChartData = this.setChartData.bind(this);
 	}
 
 	checkStatus(response) {
@@ -37,11 +32,6 @@ class App extends Component {
 			.then(json => json);
 	}
 
-	setChartData(category, data) {
-		var newState = {};
-		newState[category] = data;
-		this.setState(newState);
-	}
 	render() {
 		return (
 			<div className="App">
@@ -49,8 +39,9 @@ class App extends Component {
 					<img src={logo} className="App-logo" alt="logo" />
 					<h1 className="App-title">Language Diverge</h1>
 				</header>
-				<StackOverflow getChartData={this.getChartData} stackOverFlowData={this.state.stackOverFlowData} setChartData={this.setChartData} />
-				<Historic getChartData={this.getChartData} historicData={this.state.historicData} setChartData={this.setChartData} />
+				<div className="testblock">Test space</div>
+				<StackOverflow getChartData={this.getChartData} />
+				<Historic getChartData={this.getChartData} />
 			</div>
 		);
 	}

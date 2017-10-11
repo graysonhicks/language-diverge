@@ -26,3 +26,15 @@
 		transform: rotate(360deg);
 	}
 }
+
+.testblock {
+	height: 1000px;
+}
+
+.chart {
+	width: 50%;
+	display: inline-block;
+	float: left;
+	position: relative;
+	min-height: 425px;
+}
