@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../styles/Historic.css";
-import _ from "underscore";
 
 import { Bar } from "react-chartjs-2";
 
@@ -9,43 +8,42 @@ class Historic extends Component {
 		super(props);
 
 		this.state = {
-			historicData: {
-				data: []
-			}
+			uniqueYears: [],
+			languages: []
 		};
 	}
 	componentDidMount() {
-		this.props.getChartData("historic").then(json => this.setState({ historicData: json }));
+		this.props.getChartData("historic").then(json => {
+			this.setState({
+				uniqueYears: json.data.uniqueYears,
+				languages: json.data.languages
+			});
+		});
 	}
 
 	render() {
-		var uniqueYears = [];
-		uniqueYears = _.uniq(_.pluck(this.state.historicData.data, "year"));
-		var languages = [];
-		languages = this.state.historicData.data.map(item => {
-			var years = [];
-			for (var i = 0; i < uniqueYears.length; i++) {
-				if (item.year == uniqueYears[i]) {
-					years.push(1);
-				} else {
-					years.push(0);
-				}
-			}
-			return {
-				label: item.language,
-				backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16),
-				data: years
-			};
-		});
-		console.log(languages);
 		return (
 			<div className="Historic">
 				<Bar
 					data={{
-						labels: uniqueYears,
-						datasets: languages
+						labels: this.state.uniqueYears,
+						datasets: this.state.languages
 					}}
 					options={{
+						animation: {
+							duration: 0
+						},
+
+						hover: {
+							animationDuration: 0 // duration of animations when hovering an item
+						},
+						tooltips: {
+							callbacks: {
+								label: (item, data) => {
+									return data.datasets[item.datasetIndex].label;
+								}
+							}
+						},
 						legend: {
 							display: false
 						},
@@ -57,6 +55,8 @@ class Historic extends Component {
 							],
 							xAxes: [
 								{
+									barPercentage: 0.95,
+									categoryPercentage: 0.95,
 									stacked: true
 								}
 							]
