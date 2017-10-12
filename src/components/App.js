@@ -4,6 +4,7 @@ import "../styles/App.css";
 
 import StackOverflow from "./StackOverflow";
 import Historic from "./Historic";
+import Endangered from "./Endangered";
 
 const apiRoute = "https://language-diverge.herokuapp.com/";
 
@@ -39,9 +40,10 @@ class App extends Component {
 					<img src={logo} className="App-logo" alt="logo" />
 					<h1 className="App-title">Language Diverge</h1>
 				</header>
-				<div className="testblock">Test space</div>
+
 				<StackOverflow getChartData={this.getChartData} />
 				<Historic getChartData={this.getChartData} />
+				<Endangered getChartData={this.getChartData} />
 			</div>
 		);
 	}

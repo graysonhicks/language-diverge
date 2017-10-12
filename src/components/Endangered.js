@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "../styles/StackOverflow.css";
+import "../styles/Endangered.css";
 
 import { Line } from "react-chartjs-2";
 import Loading from "./Loading";
 
-class StackOverflow extends Component {
+class Endangered extends Component {
 	constructor(props) {
 		super(props);
 
@@ -14,10 +14,10 @@ class StackOverflow extends Component {
 	}
 
 	componentDidMount() {
-		this.props.getChartData("computer").then(json => {
+		this.props.getChartData("endangered").then(json => {
 			this.setState(
 				{
-					soData: json.data
+					endangeredData: json.data
 				},
 				() => {
 					this.setState({ loading: false });
@@ -27,9 +27,10 @@ class StackOverflow extends Component {
 	}
 
 	render() {
+		console.log(this.state);
 		return (
-			<div className="StackOverflow chart">
-				<div>Stack Overflow Data</div>
+			<div className="Endangered chart">
+				<div>Endangered Language Data</div>
 				{this.state.loading ? (
 					<Loading />
 				) : (
@@ -49,4 +50,4 @@ class StackOverflow extends Component {
 	}
 }
 
-export default StackOverflow;
+export default Endangered;
