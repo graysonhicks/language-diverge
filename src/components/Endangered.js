@@ -4,7 +4,7 @@ import { withGoogleMap, GoogleMap } from "react-google-maps";
 
 import { Line } from "react-chartjs-2";
 import Loading from "./Loading";
-import CustomMarker from "./Marker";
+import CustomMarker from "./CustomMarker";
 
 const MyMapComponent = withGoogleMap(props => (
 	<GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
