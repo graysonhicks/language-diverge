@@ -1,8 +1,23 @@
 import React, { Component } from "react";
 import "../styles/Endangered.css";
+import { withGoogleMap, GoogleMap } from "react-google-maps";
 
 import { Line } from "react-chartjs-2";
 import Loading from "./Loading";
+import CustomMarker from "./Marker";
+
+const MyMapComponent = withGoogleMap(props => (
+	<GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
+		{props.isMarkerShown &&
+			props.markers.map(marker => {
+				return (
+					<div key={marker._id}>
+						<CustomMarker key={marker._id} marker={marker} className={"marker"} />
+					</div>
+				);
+			})}
+	</GoogleMap>
+));
 
 class Endangered extends Component {
 	constructor(props) {
@@ -26,24 +41,23 @@ class Endangered extends Component {
 		});
 	}
 
+	onToggleOpen({ isOpen }) {
+		isOpen: !isOpen;
+	}
+
 	render() {
-		console.log(this.state);
 		return (
 			<div className="Endangered chart">
 				<div>Endangered Language Data</div>
 				{this.state.loading ? (
 					<Loading />
 				) : (
-					<Line
-						data={{
-							labels: [2011, 2012, 2013, 2014, 2015, 2016],
-							datasets: [
-								{
-									data: [20, 30, 40, 10, 18, 45]
-								}
-							]
-						}}
-					/>
+					<MyMapComponent
+						markers={this.state.endangeredData}
+						isMarkerShown
+						containerElement={<div style={{ height: `400px` }} />}
+						mapElement={<div style={{ height: `100%` }} />}
+					/> // Map with a Marker
 				)}
 			</div>
 		);
