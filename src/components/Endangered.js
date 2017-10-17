@@ -48,14 +48,14 @@ class Endangered extends Component {
 	render() {
 		return (
 			<div className="Endangered chart">
-				<div className="chart-heading">Endangered Language Data</div>
+				<div className="chart-heading">Endangered Languages Across the Globe</div>
 				{this.state.loading ? (
 					<Loading />
 				) : (
 					<MyMapComponent
 						markers={this.state.endangeredData}
 						isMarkerShown
-						containerElement={<div style={{ height: `425px` }} />}
+						containerElement={<div style={{ height: `600px` }} />}
 						mapElement={<div style={{ height: `100%` }} />}
 					/> // Map with a Marker
 				)}

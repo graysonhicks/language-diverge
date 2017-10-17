@@ -41,10 +41,15 @@
 }
 
 .chart {
-	width: 50%;
+	width: 100%;
 	display: inline-block;
 	float: left;
 	position: relative;
 	margin-bottom: 15px;
 	margin-top: 15px;
+}
+
+.chart-heading {
+	font-size: 1.5em;
+	margin-bottom: 15px;
 }
