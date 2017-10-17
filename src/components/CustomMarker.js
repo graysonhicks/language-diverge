@@ -19,7 +19,7 @@ class CustomMarker extends Component {
 	}
 
 	render() {
-		console.log(this.state);
+		console.log(this.props.marker);
 		return (
 			<Marker
 				key={this.props.marker.id}
@@ -31,7 +31,9 @@ class CustomMarker extends Component {
 			>
 				{this.state.isOpen ? (
 					<InfoWindow onCloseClick={this.onToggleOpen}>
-						<div>{this.props.marker.language}</div>
+						<div>
+							Language: {this.props.marker.language} <br />Status: {this.props.marker["Degree of endangerment"]}
+						</div>
 					</InfoWindow>
 				) : (
 					<div />

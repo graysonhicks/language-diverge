@@ -29,7 +29,7 @@ class StackOverflow extends Component {
 	render() {
 		return (
 			<div className="StackOverflow chart">
-				<div>Stack Overflow Data</div>
+				<div className="chart-heading">Stack Overflow Data</div>
 				{this.state.loading ? (
 					<Loading />
 				) : (

@@ -40,10 +40,11 @@ class App extends Component {
 					<img src={logo} className="App-logo" alt="logo" />
 					<h1 className="App-title">Language Diverge</h1>
 				</header>
-
-				<StackOverflow getChartData={this.getChartData} />
-				<Historic getChartData={this.getChartData} />
-				<Endangered getChartData={this.getChartData} />
+				<div className="body-container">
+					<StackOverflow getChartData={this.getChartData} />
+					<Historic getChartData={this.getChartData} />
+					<Endangered getChartData={this.getChartData} />
+				</div>
 			</div>
 		);
 	}

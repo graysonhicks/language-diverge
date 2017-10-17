@@ -7,7 +7,7 @@ import Loading from "./Loading";
 import CustomMarker from "./CustomMarker";
 
 const MyMapComponent = withGoogleMap(props => (
-	<GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
+	<GoogleMap defaultZoom={3} defaultCenter={{ lat: props.markers[0].latitude, lng: props.markers[0].longitude }}>
 		{props.isMarkerShown &&
 			props.markers.map(marker => {
 				return (
@@ -48,14 +48,14 @@ class Endangered extends Component {
 	render() {
 		return (
 			<div className="Endangered chart">
-				<div>Endangered Language Data</div>
+				<div className="chart-heading">Endangered Language Data</div>
 				{this.state.loading ? (
 					<Loading />
 				) : (
 					<MyMapComponent
 						markers={this.state.endangeredData}
 						isMarkerShown
-						containerElement={<div style={{ height: `400px` }} />}
+						containerElement={<div style={{ height: `425px` }} />}
 						mapElement={<div style={{ height: `100%` }} />}
 					/> // Map with a Marker
 				)}

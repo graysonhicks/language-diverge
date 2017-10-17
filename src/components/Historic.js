@@ -37,6 +37,7 @@ class Historic extends Component {
 				}
 			}
 		},
+		maintainAspectRatio: true,
 		legend: {
 			display: false
 		},
@@ -62,7 +63,7 @@ class Historic extends Component {
 	render() {
 		return (
 			<div className="Historic chart">
-				<div>Programming Languages Creation by Year</div>
+				<div className="chart-heading">Programming Languages Creation by Year</div>
 				{this.state.loading ? (
 					<Loading />
 				) : (

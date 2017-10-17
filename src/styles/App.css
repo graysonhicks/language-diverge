@@ -1,5 +1,14 @@
 .App {
 	text-align: center;
+	display: inline-block;
+	width: 100%;
+}
+
+.body-container {
+	display: inline-block;
+	width: 90%;
+	margin: 0 auto;
+	padding-bottom: 100px;
 }
 
 .App-logo {
@@ -36,5 +45,6 @@
 	display: inline-block;
 	float: left;
 	position: relative;
-	min-height: 425px;
+	margin-bottom: 15px;
+	margin-top: 15px;
 }
