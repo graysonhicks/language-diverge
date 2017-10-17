@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../styles/Endangered.css";
 import { withGoogleMap, GoogleMap } from "react-google-maps";
 
-import { Line } from "react-chartjs-2";
 import Loading from "./Loading";
 import CustomMarker from "./CustomMarker";
 
