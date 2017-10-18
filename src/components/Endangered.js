@@ -6,7 +6,14 @@ import Loading from "./Loading";
 import CustomMarker from "./CustomMarker";
 
 const MyMapComponent = withGoogleMap(props => (
-	<GoogleMap defaultZoom={3} defaultCenter={{ lat: props.markers[0].latitude, lng: props.markers[0].longitude }}>
+	<GoogleMap
+		mapTypeId="satellite"
+		defaultOptions={{
+			mapTypeControl: false
+		}}
+		defaultZoom={3}
+		defaultCenter={{ lat: props.markers[0].latitude, lng: props.markers[0].longitude }}
+	>
 		{props.isMarkerShown &&
 			props.markers.map(marker => {
 				return (
@@ -38,10 +45,6 @@ class Endangered extends Component {
 				}
 			);
 		});
-	}
-
-	onToggleOpen({ isOpen }) {
-		isOpen: !isOpen;
 	}
 
 	render() {
