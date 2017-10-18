@@ -9,10 +9,11 @@ const MyMapComponent = withGoogleMap(props => (
 	<GoogleMap
 		mapTypeId="satellite"
 		defaultOptions={{
-			mapTypeControl: false
+			mapTypeControl: false,
+			minZoom: 3
 		}}
 		defaultZoom={3}
-		defaultCenter={{ lat: props.markers[0].latitude, lng: props.markers[0].longitude }}
+		defaultCenter={{ lat: 0, lng: 0 }}
 	>
 		{props.isMarkerShown &&
 			props.markers.map(marker => {
@@ -57,7 +58,7 @@ class Endangered extends Component {
 					<MyMapComponent
 						markers={this.state.endangeredData}
 						isMarkerShown
-						containerElement={<div style={{ height: `600px` }} />}
+						containerElement={<div style={{ height: `500px` }} />}
 						mapElement={<div style={{ height: `100%` }} />}
 					/> // Map with a Marker
 				)}
