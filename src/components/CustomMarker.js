@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import { Marker, InfoWindow } from "react-google-maps";
+import critical from "../images/symbol_blank_critically.png";
+import severe from "../images/symbol_blank_severely.png";
+import definite from "../images/symbol_blank_definitely.png";
+import vulnerable from "../images/symbol_blank_vulnerable.png";
 
 class CustomMarker extends Component {
 	constructor(props) {
@@ -18,16 +22,43 @@ class CustomMarker extends Component {
 		});
 	}
 
+	chooseMarkerIcon(status) {
+		var icon = "";
+		switch (status) {
+			case "Critically endangered":
+				icon = critical;
+				break;
+			case "Definitely endangered":
+				icon = definite;
+				break;
+			case "Severely endangered":
+				icon = severe;
+				break;
+			case "Vulnerable":
+				icon = vulnerable;
+				break;
+			default:
+				icon = vulnerable;
+		}
+
+		return icon;
+	}
+
 	render() {
-		console.log(this.props.marker);
+		var icon = this.chooseMarkerIcon(this.props.marker["Degree of endangerment"]);
 		return (
 			<Marker
 				key={this.props.marker.id}
 				onClick={this.onToggleOpen}
 				position={{ lat: this.props.marker.latitude, lng: this.props.marker.longitude }}
 				id={this.props.marker._id}
-				style={{ height: "5xpx", width: "5px" }}
+				style={{ height: "5px", width: "5px", margin: "5px" }}
 				className={"marker"}
+				options={{
+					icon: {
+						url: icon
+					}
+				}}
 			>
 				{this.state.isOpen ? (
 					<InfoWindow onCloseClick={this.onToggleOpen}>
