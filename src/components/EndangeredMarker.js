@@ -9,7 +9,7 @@ const spreadMarkers = function(position) {
 	return position * (Math.random() * (1.000001 - 0.9) + 0.9);
 };
 
-class CustomMarker extends Component {
+class EndangeredMarker extends Component {
 	constructor(props) {
 		super(props);
 
@@ -87,4 +87,4 @@ class CustomMarker extends Component {
 	}
 }
 
-export default CustomMarker;
+export default EndangeredMarker;

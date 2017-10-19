@@ -5,6 +5,7 @@ import "../styles/App.css";
 import StackOverflow from "./StackOverflow";
 import Historic from "./Historic";
 import Endangered from "./Endangered";
+import Extinct from "./Extinct";
 
 const apiRoute = "https://language-diverge.herokuapp.com/";
 
@@ -44,6 +45,7 @@ class App extends Component {
 					<StackOverflow getChartData={this.getChartData} />
 					<Historic getChartData={this.getChartData} />
 					<Endangered getChartData={this.getChartData} />
+					<Extinct getChartData={this.getChartData} />
 				</div>
 			</div>
 		);

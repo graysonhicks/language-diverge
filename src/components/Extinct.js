@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import "../styles/Endangered.css";
+import "../styles/Extinct.css";
 import { withGoogleMap, GoogleMap } from "react-google-maps";
 
-import MarkerClusterer from "react-google-maps/lib/components/addons/MarkerClusterer";
-
 import Loading from "./Loading";
-import EndangeredMarker from "./EndangeredMarker";
+import ExtinctMarker from "./ExtinctMarker";
 
 const MyMapComponent = withGoogleMap(props => (
 	<GoogleMap
@@ -17,16 +15,14 @@ const MyMapComponent = withGoogleMap(props => (
 		defaultZoom={3}
 		defaultCenter={{ lat: 0, lng: 0 }}
 	>
-		<MarkerClusterer averageCenter enableRetinaIcons gridSize={50} maxZoom={7}>
-			{props.isMarkerShown &&
-				props.markers.map(marker => {
-					return <EndangeredMarker key={marker._id} marker={marker} className={"marker"} />;
-				})}
-		</MarkerClusterer>
+		{props.isMarkerShown &&
+			props.markers.map(marker => {
+				return <ExtinctMarker key={marker._id} marker={marker} className={"marker"} />;
+			})}
 	</GoogleMap>
 ));
 
-class Endangered extends Component {
+class Extinct extends Component {
 	constructor(props) {
 		super(props);
 
@@ -36,7 +32,7 @@ class Endangered extends Component {
 	}
 
 	componentDidMount() {
-		this.props.getChartData("endangered").then(json => {
+		this.props.getChartData("extinct").then(json => {
 			this.setState(
 				{
 					endangeredData: json.data
@@ -50,8 +46,8 @@ class Endangered extends Component {
 
 	render() {
 		return (
-			<div className="Endangered chart">
-				<div className="chart-heading">Endangered Languages Across the Globe</div>
+			<div className="Extinct chart">
+				<div className="chart-heading">Extinct Languages Across the Globe</div>
 				{this.state.loading ? (
 					<Loading />
 				) : (
@@ -67,4 +63,4 @@ class Endangered extends Component {
 	}
 }
 
-export default Endangered;
+export default Extinct;
