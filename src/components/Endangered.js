@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "../styles/Endangered.css";
 import { withGoogleMap, GoogleMap } from "react-google-maps";
 
+import MarkerClusterer from "react-google-maps/lib/components/addons/MarkerClusterer";
+
 import Loading from "./Loading";
 import CustomMarker from "./CustomMarker";
 
@@ -15,14 +17,12 @@ const MyMapComponent = withGoogleMap(props => (
 		defaultZoom={3}
 		defaultCenter={{ lat: 0, lng: 0 }}
 	>
-		{props.isMarkerShown &&
-			props.markers.map(marker => {
-				return (
-					<div key={marker._id}>
-						<CustomMarker key={marker._id} marker={marker} className={"marker"} />
-					</div>
-				);
-			})}
+		<MarkerClusterer averageCenter enableRetinaIcons gridSize={50} maxZoom={7}>
+			{props.isMarkerShown &&
+				props.markers.map(marker => {
+					return <CustomMarker key={marker._id} marker={marker} className={"marker"} />;
+				})}
+		</MarkerClusterer>
 	</GoogleMap>
 ));
 
