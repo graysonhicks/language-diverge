@@ -1,8 +1,28 @@
 import React, { Component } from "react";
 import "../styles/StackOverflow.css";
 
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import Loading from "./Loading";
+
+var colors = [
+	"#29a390",
+	"#8f93ff",
+	"#c7c9ff",
+	"#0f147f",
+	"#161cb5",
+	"#ffd780",
+	"#ffebbf",
+	"#b37a00",
+	"#ffaf00",
+	"#ffaf80",
+	"#ffd7bf",
+	"#b34300",
+	"#ff5f00",
+	"#80fff7",
+	"#bffffb",
+	"#006d66",
+	"#009c92"
+];
 
 class StackOverflow extends Component {
 	constructor(props) {
@@ -13,11 +33,18 @@ class StackOverflow extends Component {
 		};
 	}
 
+	getLanguageLength(data) {
+		return data.map(item => {
+			item.languages = item.languages.split(";");
+			return item;
+		});
+	}
+
 	componentDidMount() {
 		this.props.getChartData("computer").then(json => {
 			this.setState(
 				{
-					soData: json.data
+					soData: this.getLanguageLength(json.data)
 				},
 				() => {
 					this.setState({ loading: false });
@@ -26,6 +53,24 @@ class StackOverflow extends Component {
 		});
 	}
 
+	options = {
+		maintainAspectRatio: true,
+		legend: {
+			display: false
+		},
+		scales: {
+			xAxes: [
+				{
+					gridLines: {
+						display: false
+					},
+					barPercentage: 0.95,
+					categoryPercentage: 0.95
+				}
+			]
+		}
+	};
+
 	render() {
 		return (
 			<div className="StackOverflow chart">
@@ -33,15 +78,17 @@ class StackOverflow extends Component {
 				{this.state.loading ? (
 					<Loading />
 				) : (
-					<Line
+					<Bar
 						data={{
-							labels: [2011, 2012, 2013, 2014, 2015, 2016],
+							labels: this.state.soData.map((item, index) => index),
 							datasets: [
 								{
-									data: [20, 30, 40, 10, 18, 45]
+									data: this.state.soData.map((item, index) => item.languages.length),
+									backgroundColor: this.state.soData.map(item => colors[Math.floor(Math.random() * colors.length)])
 								}
 							]
 						}}
+						options={this.options}
 					/>
 				)}
 			</div>
