@@ -16,7 +16,6 @@ class ExtinctTimeline extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		console.log(nextProps);
 		if (nextProps.extinctData) {
 			this.setState({
 				loading: false,

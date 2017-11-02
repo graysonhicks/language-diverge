@@ -9,24 +9,29 @@ class Extinct extends Component {
 		super(props);
 
 		this.state = {
-			extinctData: []
+			loading: true
 		};
 	}
 
 	componentDidMount() {
 		this.props.getChartData("extinct").then(json => {
-			console.log(json);
-			this.setState({
-				extinctData: json.data.languages
-			});
+			this.setState(
+				{
+					extinctData: json.data.languages
+				},
+				() => {
+					this.setState({
+						loading: false
+					});
+				}
+			);
 		});
 	}
 
 	render() {
-		console.log(this.state);
 		return (
 			<div className="Extinct container">
-				<ExtinctMap extinctData={this.state.extinctData} />
+				<ExtinctMap extinctData={this.state.extinctData} loading={this.state.loading} />
 				<ExtinctTimeline extinctData={this.state.extinctData} />
 			</div>
 		);

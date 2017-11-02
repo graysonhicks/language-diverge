@@ -3,7 +3,7 @@
 	width: 100%;
 	display: inline-block;
 	position: relative;
-	background-color: #0d8aa5;
+	background-color: white;
 	border-radius: 5px;
 }
 
@@ -23,7 +23,7 @@
 }
 .spinner:after {
 	content: "";
-	background: trasparent;
+	background: transparent;
 	width: 140%;
 	height: 140%;
 	position: absolute;
@@ -31,7 +31,7 @@
 	top: -20%;
 	left: -20%;
 	opacity: 0.7;
-	box-shadow: rgba(255, 255, 255, 0.6) -4px -5px 3px -3px;
+	box-shadow: rgba(13, 138, 164, 0.6) -4px -5px 3px -3px;
 	animation: rotate 2s infinite linear;
 }
 

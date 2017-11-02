@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "../logo.svg";
+
 import "../styles/App.css";
 
 import StackOverflow from "./StackOverflow";
@@ -38,8 +38,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<h1 className="App-title">Language Diverge</h1>
+					<h1 className="App-title">Human vs. Computer Language Diversity</h1>
 				</header>
 				<div className="body-container">
 					<StackOverflow getChartData={this.getChartData} />

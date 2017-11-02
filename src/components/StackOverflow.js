@@ -32,19 +32,12 @@ class StackOverflow extends Component {
 			loading: true
 		};
 	}
-
-	getLanguageLength(data) {
-		return data.map(item => {
-			item.languages = item.languages.split(";");
-			return item;
-		});
-	}
-
 	componentDidMount() {
 		this.props.getChartData("computer").then(json => {
+			console.log(json.data);
 			this.setState(
 				{
-					soData: this.getLanguageLength(json.data)
+					soData: json.data
 				},
 				() => {
 					this.setState({ loading: false });
