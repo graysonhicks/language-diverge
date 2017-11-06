@@ -37,12 +37,7 @@ class StackOverflow extends Component {
 			console.log(json.data);
 			this.setState(
 				{
-					so2011: json.data["so2011"],
-					so2012: json.data["so2012"],
-					so2013: json.data["so2013"],
-					so2014: json.data["so2014"],
-					so2015: json.data["so2015"],
-					so2016: json.data["so2016"]
+					soData: json.data
 				},
 				() => {
 					this.setState({ loading: false });
@@ -52,6 +47,13 @@ class StackOverflow extends Component {
 	}
 
 	options = {
+		tooltips: {
+			callbacks: {
+				label: (item, data) => {
+					return data.datasets[item.datasetIndex].label;
+				}
+			}
+		},
 		maintainAspectRatio: true,
 		legend: {
 			display: false
@@ -85,32 +87,7 @@ class StackOverflow extends Component {
 					<Bar
 						data={{
 							labels: ["2011", "2012", "2013", "2014", "2015", "2016"],
-							datasets: [
-								{
-									data: Object.keys(this.state.so2011).map((key, index) => this.state.so2011[key]),
-									backgroundColor: Object.keys(this.state.so2011).map((key, index) => colors[Math.floor(Math.random() * colors.length)])
-								},
-								{
-									data: Object.keys(this.state.so2012).map((key, index) => this.state.so2012[key]),
-									backgroundColor: Object.keys(this.state.so2012).map((key, index) => colors[Math.floor(Math.random() * colors.length)])
-								},
-								{
-									data: Object.keys(this.state.so2013).map((key, index) => this.state.so2013[key]),
-									backgroundColor: Object.keys(this.state.so2013).map((key, index) => colors[Math.floor(Math.random() * colors.length)])
-								},
-								{
-									data: Object.keys(this.state.so2014).map((key, index) => this.state.so2014[key]),
-									backgroundColor: Object.keys(this.state.so2014).map((key, index) => colors[Math.floor(Math.random() * colors.length)])
-								},
-								{
-									data: Object.keys(this.state.so2015).map((key, index) => this.state.so2015[key]),
-									backgroundColor: Object.keys(this.state.so2015).map((key, index) => colors[Math.floor(Math.random() * colors.length)])
-								},
-								{
-									data: Object.keys(this.state.so2016).map((key, index) => this.state.so2016[key]),
-									backgroundColor: Object.keys(this.state.so2016).map((key, index) => colors[Math.floor(Math.random() * colors.length)])
-								}
-							]
+							datasets: this.state.soData
 						}}
 						options={this.options}
 					/>
