@@ -6,7 +6,7 @@
 
 .body-container {
 	display: inline-block;
-	width: 90%;
+	width: 75%;
 	margin: 0 auto;
 	padding-bottom: 100px;
 }
@@ -26,7 +26,7 @@
 }
 
 .chart {
-	width: 50%;
+	width: 100%;
 	display: inline-block;
 	float: left;
 	position: relative;

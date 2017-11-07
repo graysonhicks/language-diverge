@@ -4,26 +4,6 @@ import "../styles/StackOverflow.css";
 import { Bar } from "react-chartjs-2";
 import Loading from "./Loading";
 
-var colors = [
-	"#29a390",
-	"#8f93ff",
-	"#c7c9ff",
-	"#0f147f",
-	"#161cb5",
-	"#ffd780",
-	"#ffebbf",
-	"#b37a00",
-	"#ffaf00",
-	"#ffaf80",
-	"#ffd7bf",
-	"#b34300",
-	"#ff5f00",
-	"#80fff7",
-	"#bffffb",
-	"#006d66",
-	"#009c92"
-];
-
 class StackOverflow extends Component {
 	constructor(props) {
 		super(props);
@@ -34,7 +14,6 @@ class StackOverflow extends Component {
 	}
 	componentDidMount() {
 		this.props.getChartData("computer").then(json => {
-			console.log(json.data);
 			this.setState(
 				{
 					soData: json.data
@@ -50,7 +29,7 @@ class StackOverflow extends Component {
 		tooltips: {
 			callbacks: {
 				label: (item, data) => {
-					return data.datasets[item.datasetIndex].label;
+					return data.datasets[item.datasetIndex].label + " " + (data.datasets[item.datasetIndex]["data"][item.index] * 100).toFixed(1) + "%";
 				}
 			}
 		},

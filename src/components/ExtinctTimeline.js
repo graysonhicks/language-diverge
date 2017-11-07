@@ -16,11 +16,11 @@ class ExtinctTimeline extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
+		console.log(nextProps);
 		if (nextProps.extinctData) {
 			this.setState({
 				loading: false,
-				uniqueYears: nextProps.uniqueYears,
-				languages: nextProps.languages
+				extinctData: nextProps.extinctData
 			});
 		}
 	}
@@ -59,14 +59,13 @@ class ExtinctTimeline extends Component {
 	render() {
 		return (
 			<div className="ExtinctTimeline chart">
-				<div className="chart-heading">Programming Languages Creation by Year</div>
+				<div className="chart-heading">Extinct Languages by Year</div>
 				{this.state.loading ? (
 					<Loading />
 				) : (
 					<Bar
 						data={{
-							labels: this.state.uniqueYears,
-							datasets: this.state.languages
+							datasets: this.state.extinctData
 						}}
 						options={this.options}
 					/>

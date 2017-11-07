@@ -61,7 +61,6 @@ class Historic extends Component {
 	};
 
 	render() {
-		console.log(this.state);
 		return (
 			<div className="Historic chart">
 				<div className="chart-heading">Programming Languages Creation by Year</div>
