@@ -31,6 +31,7 @@ class ExtinctMarker extends Component {
 
 	render() {
 		if (!this.props.marker.latitude) return "";
+		console.log(this.props.marker);
 		return (
 			<Marker
 				key={this.props.marker._id}
@@ -44,12 +45,11 @@ class ExtinctMarker extends Component {
 				className={"marker"}
 				icon={{
 					url: dead
-				}}
-			>
+				}}>
 				{this.state.isOpen ? (
 					<InfoWindow onCloseClick={this.onToggleOpen}>
 						<div>
-							Language: {this.props.marker.language} <br />Date of Extinction: {this.props.marker["year"] || "Unknown"}
+							Language: {this.props.marker.label} <br />Date of Extinction: {this.props.marker["year"] || "Unknown"}
 						</div>
 					</InfoWindow>
 				) : (

@@ -16,11 +16,11 @@ class ExtinctTimeline extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		console.log(nextProps);
 		if (nextProps.extinctData) {
 			this.setState({
 				loading: false,
-				extinctData: nextProps.extinctData
+				extinctData: nextProps.extinctData,
+				uniqueYears: nextProps.uniqueYears
 			});
 		}
 	}
@@ -65,6 +65,7 @@ class ExtinctTimeline extends Component {
 				) : (
 					<Bar
 						data={{
+							labels: this.state.uniqueYears,
 							datasets: this.state.extinctData
 						}}
 						options={this.options}

@@ -17,7 +17,8 @@ class Extinct extends Component {
 		this.props.getChartData("extinct").then(json => {
 			this.setState(
 				{
-					extinctData: json.data.languages
+					extinctData: json.data.languages,
+					uniqueYears: json.data.uniqueYears
 				},
 				() => {
 					this.setState({
@@ -32,7 +33,7 @@ class Extinct extends Component {
 		return (
 			<div className="Extinct container">
 				<ExtinctMap extinctData={this.state.extinctData} loading={this.state.loading} />
-				<ExtinctTimeline extinctData={this.state.extinctData} />
+				<ExtinctTimeline extinctData={this.state.extinctData} uniqueYears={this.state.uniqueYears} />
 			</div>
 		);
 	}

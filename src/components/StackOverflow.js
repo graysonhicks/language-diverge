@@ -40,7 +40,8 @@ class StackOverflow extends Component {
 		scales: {
 			yAxes: [
 				{
-					stacked: true
+					stacked: true,
+					display: false
 				}
 			],
 			xAxes: [

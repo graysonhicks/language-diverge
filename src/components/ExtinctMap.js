@@ -24,10 +24,6 @@ const MyMapComponent = withGoogleMap(props => {
 });
 
 class ExtinctMap extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		return (
 			<div className="Extinct map">
