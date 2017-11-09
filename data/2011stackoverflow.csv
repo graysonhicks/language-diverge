@@ -31,7 +31,7 @@ year,location,languages
 2011,United States of America,Java;PHP;Python;C++;C
 2011,Other Europe,JavaScript;CSS;SQL;C#
 2011,Other Europe,Java;JavaScript;Python
-2011,Germany,Java;JavaScript;Objective-C 2.
+2011,Germany,Java;JavaScript;Objective-C
 2011,Germany,JavaScript;CSS
 2011,Other Asia,Java;SQL;C#
 2011,Russia,JavaScript;SQL;C#
@@ -217,7 +217,7 @@ year,location,languages
 2011,Russia,C#
 2011,Other Europe,Java;C++;C
 2011,Russia,JavaScript;CSS;PHP;SQL;Perl
-2011,Other Europe,Java;Ruby;objective c
+2011,Other Europe,Java;Ruby;Objective-C
 2011,Mexico,Java;JavaScript;CSS;PHP;Python;Ruby;SQL;C#;C;bash
 2011,Other Europe,JavaScript;CSS;SQL;C#
 2011,Other Asia,Java;PHP;Python
@@ -268,7 +268,7 @@ year,location,languages
 2011,South America,Java;JavaScript;CSS;Python;SQL;C;Perl
 2011,Other Asia,Java;C#
 2011,Other Asia,Python;C#;C++
-2011,United States of America,"CSS;Ruby;VB, Objective C"
+2011,United States of America,"CSS;Ruby;VB, Objective-C"
 2011,Australia,Java;JavaScript;CSS;PHP;Python;SQL;C#;C++;Perl;sh
 2011,Other Europe,Java;JavaScript;CSS;SQL
 2011,Other Asia,Java;JavaScript;CSS;PHP;Python;SQL;C#;C++;C;Perl
@@ -288,7 +288,7 @@ year,location,languages
 2011,United States of America,Java;JavaScript;CSS;Python;SQL;Objective-C
 2011,South America,Java;JavaScript;CSS;PHP;SQL;C
 2011,Canada,Java;SQL;Perl
-2011,United States of America,CSS;SQL;C#;Objective c
+2011,United States of America,CSS;SQL;C#;Objective-C
 2011,United States of America,JavaScript;CSS;Ruby;SQL;C#
 2011,Other Europe,PHP
 2011,South America,JavaScript;CSS;PHP;Perl
@@ -410,7 +410,7 @@ year,location,languages
 2011,Other Europe,Java;JavaScript;CSS;Python;Ruby;SQL;Ruby
 2011,United States of America,JavaScript;CSS;PHP;SQL;C#;Perl
 2011,United States of America,JavaScript;CSS;PHP;SQL;C#
-2011,Germany,Java;Objective C
+2011,Germany,Java;Objective-C
 2011,United States of America,JavaScript;CSS;PHP;SQL;C#
 2011,United States of America,JavaScript;CSS;C#
 2011,Canada,CSS;PHP;Python;SQL
@@ -437,7 +437,7 @@ year,location,languages
 2011,United States of America,CSS;Python;C++;C
 2011,Other Europe,JavaScript;CSS;Python;SQL;C#;C++;C
 2011,United States of America,JavaScript;SQL;C#
-2011,Germany,Java;JavaScript;CSS;SQL;C#;Objective C
+2011,Germany,Java;JavaScript;CSS;SQL;C#;Objective-C
 2011,United States of America,Java;C#
 2011,United Kingdom,Python;Delphi
 2011,United States of America,JavaScript;CSS;SQL;C#
@@ -460,7 +460,7 @@ year,location,languages
 2011,United States of America,JavaScript;SQL;C#
 2011,Middle East,C#
 2011,United Kingdom,Java;JavaScript;CSS;PHP;Ruby;SQL;C#;Perl
-2011,United States of America,Python;C++;C;Objective C
+2011,United States of America,Python;C++;C;Objective-C
 2011,Australia,Java
 2011,Other Europe,Java;CSS;PHP;Python;SQL;C++
 2011,Africa,C#;C++
@@ -703,7 +703,7 @@ year,location,languages
 2011,France,Java;C;Ada
 2011,India,Java;SQL;Android
 2011,Middle East,Java;JavaScript;CSS;Python;SQL
-2011,India,objective -c
+2011,India,Objective-C
 2011,Other Europe,Java;JavaScript;PHP;C++;C
 2011,Other Europe,Java;C#;C++
 2011,Other Europe,Java;Python;SQL;C#;C++;C;Perl
@@ -751,7 +751,7 @@ year,location,languages
 2011,United States of America,JavaScript;CSS;PHP;SQL
 2011,South America,C
 2011,Middle East,Java;Python;SQL
-2011,United States of America,Objective-C (how is this not a choice)
+2011,United States of America,objective-c
 2011,United States of America,"JavaScript;CSS;Python;Ruby;SQL;C#;F#,VB6"
 2011,United States of America,Java;JavaScript;CSS;PHP;SQL;C#;C++
 2011,United States of America,C#
@@ -783,7 +783,7 @@ year,location,languages
 2011,Middle East,Java;CSS;SQL;C#
 2011,United States of America,CSS;PHP;SQL;C#;C++;Perl
 2011,United Kingdom,Java
-2011,Middle East,Java;CSS;Ruby;C++;C;objective c
+2011,Middle East,Java;CSS;Ruby;C++;C;Objective-C
 2011,Germany,Java;JavaScript;CSS;PHP;Python;Ruby;Perl
 2011,Canada,Perl
 2011,Other Europe,C#;Objective-C
@@ -802,7 +802,7 @@ year,location,languages
 2011,United States of America,Java;C++;C;Perl
 2011,United States of America,CSS;PHP
 2011,United States of America,Java;CSS;PHP;SQL;C#;C++
-2011,United States of America,Python;C++;C;Objective C
+2011,United States of America,Python;C++;C;Objective-C
 2011,United States of America,None
 2011,United States of America,Java;CSS;C#
 2011,United States of America,JavaScript;CSS;SQL;C#;HTML
@@ -829,7 +829,7 @@ year,location,languages
 2011,United States of America,Java;JavaScript;CSS;SQL;C#;Perl
 2011,United States of America,PHP;SQL;C#;C++;C
 2011,United States of America,JavaScript;CSS;PHP;C++;C
-2011,United Kingdom,Java;Ruby;C;Objective C
+2011,United Kingdom,Java;Ruby;C;Objective-C
 2011,South America,CSS;PHP;SQL;C#;C++;C;Assembly
 2011,Middle East,JavaScript;CSS
 2011,United Kingdom,CSS;PHP;vb
@@ -844,7 +844,7 @@ year,location,languages
 2011,Other Europe,Java;JavaScript;CSS;PHP;C#;C++;C
 2011,Other Europe,Java;JavaScript;PHP;SQL;C++;C;Perl;ObjectiveC
 2011,United Kingdom,JavaScript;CSS;Ruby
-2011,Other Europe,Java;CSS;C#;Objective C
+2011,Other Europe,Java;CSS;C#;Objective-C
 2011,Mexico,Java
 2011,United Kingdom,Java;Python;C++;C
 2011,Germany,Java;JavaScript;CSS;PHP;SQL;C#;C++;C
@@ -861,7 +861,7 @@ year,location,languages
 2011,Canada,Java;PHP;SQL;C#;C++;C
 2011,Germany,JavaScript;C#
 2011,Germany,Java;SQL;C;Perl
-2011,Other Europe,"SQL;C#;C;obj-c , vba"
+2011,Other Europe,"SQL;C#;C;Objective-C , vba"
 2011,India,C
 2011,United States of America,JavaScript;CSS;PHP;SQL;C#
 2011,Germany,CSS;PHP;Python;Ruby;SQL;C;lisp
@@ -1089,7 +1089,7 @@ year,location,languages
 2011,United Kingdom,JavaScript;CSS;Python;SQL;C#
 2011,Other Europe,SQL;C#;Objective-C
 2011,Africa,Java;SQL;C++;C
-2011,Netherlands,Java;JavaScript;CSS;PHP;C++;C;Objective C
+2011,Netherlands,Java;JavaScript;CSS;PHP;C++;C;Objective-C
 2011,Other Europe,SQL;Delphi
 2011,Other Europe,Java;JavaScript;CSS;SQL;C++;C
 2011,Other Europe,SQL;C#
@@ -1113,7 +1113,7 @@ year,location,languages
 2011,Italy,JavaScript;CSS;PHP
 2011,United Kingdom,SQL;C#
 2011,United Kingdom,CSS
-2011,Other Europe,JavaScript;PHP;SQL;C#;C++;C;Objective C
+2011,Other Europe,JavaScript;PHP;SQL;C#;C++;C;Objective-C
 2011,Africa,Java;JavaScript;SQL;C#
 2011,India,C#
 2011,France,Java;JavaScript;CSS;Python;C;Perl;Prolog
@@ -1227,7 +1227,7 @@ year,location,languages
 2011,Other Europe,Java;C#;C++;Nemerle
 2011,United States of America,JavaScript;CSS;SQL;vb.net
 2011,Other Europe,Java;JavaScript;CSS;SQL;C#
-2011,Other Europe,Java;SQL;C++;C;Objective C
+2011,Other Europe,Java;SQL;C++;C;Objective-C
 2011,Canada,SQL;C#;C++
 2011,Other Europe,Python
 2011,United States of America,JavaScript;CSS;PHP;SQL;C#
@@ -1262,7 +1262,7 @@ year,location,languages
 2011,United States of America,SQL;C#
 2011,United States of America,Java;JavaScript;CSS;SQL;C#;C++;C
 2011,United States of America,CSS;PHP;Python;SQL;C#
-2011,France,Python;C#;Objective C
+2011,France,Python;C#;Objective-C
 2011,United Kingdom,C#;C++
 2011,United States of America,"Java;CSS;SQL;C++;C;Perl;Common Lisp, Clojure, Scala, LaTeX"
 2011,Canada,JavaScript;CSS;SQL;C#;C++
@@ -1678,7 +1678,7 @@ year,location,languages
 2011,United States of America,Java;Python;SQL;C++;C;FORTRAN
 2011,United States of America,JavaScript;CSS;PHP;Python;SQL
 2011,Other Europe,JavaScript;CSS;PHP;SQL;Delphi
-2011,United States of America,JavaScript;CSS;Python;C;Perl;Objective C
+2011,United States of America,JavaScript;CSS;Python;C;Perl;Objective-C
 2011,United States of America,Python;SQL;C;Perl
 2011,Australia,JavaScript;CSS;SQL;C#;C
 2011,United States of America,actionscript 3
@@ -2130,7 +2130,7 @@ year,location,languages
 2011,United States of America,C++;C;Tcl
 2011,Netherlands,Java;Python;SQL
 2011,United States of America,Java;Python;SQL
-2011,France,JavaScript;CSS;PHP;SQL;C#;C++;C;Objective C
+2011,France,JavaScript;CSS;PHP;SQL;C#;C++;C;Objective-C
 2011,United States of America,Java;JavaScript;CSS;Ruby;SQL
 2011,Middle East,JavaScript;SQL;C#
 2011,United States of America,PHP;Ruby;C#;C++;C
@@ -2286,7 +2286,7 @@ year,location,languages
 2011,United States of America,Python;C++;C
 2011,United States of America,Python;C#;C++;C
 2011,Other Asia,JavaScript;CSS;PHP;SQL;C#;C++;C
-2011,United States of America,C;Obj-c
+2011,United States of America,C;Objective-C
 2011,United Kingdom,PHP;SQL;C;objective-c
 2011,Canada,Python
 2011,Other Europe,Java
@@ -2474,7 +2474,7 @@ year,location,languages
 2011,India,JavaScript;CSS;PHP;SQL
 2011,Other Europe,"JavaScript;CSS;SQL;C#;Java, ActionScript"
 2011,Middle East,JavaScript;CSS;PHP;C++;C
-2011,India,objective c
+2011,India,Objective-C
 2011,United States of America,SQL;C#
 2011,United Kingdom,JavaScript;CSS;SQL;C++;C
 2011,Australia,"JavaScript;Python;Ruby;SQL;C#;C++;C;Realbasic, Objective-C"
@@ -2508,7 +2508,7 @@ year,location,languages
 2011,Other Europe,CSS;PHP;Python;C++;C;java
 2011,Middle East,JavaScript;CSS;PHP;SQL;Java
 2011,Other Europe,JavaScript;SQL;C#
-2011,India,SQL;C#;C++;C;Objective C
+2011,India,SQL;C#;C++;C;Objective-C
 2011,Other Europe,Python;SQL;C#
 2011,Other Europe,JavaScript;CSS;PHP;SQL;JSP
 2011,France,PHP;Python;C++
@@ -2552,7 +2552,7 @@ year,location,languages
 2011,United States of America,CSS;SQL;C#;F#
 2011,United States of America,"SQL;pl/sql, Java"
 2011,Australia,JavaScript;CSS;SQL;C#;C++
-2011,United States of America,"JavaScript;CSS;PHP;Python;SQL;C#;C;Perl;Obj-c, java,"
+2011,United States of America,"JavaScript;CSS;PHP;Python;SQL;C#;C;Perl;Objective-C, java,"
 2011,United States of America,JavaScript;CSS;PHP;Python;SQL;C++;C
 2011,South America,JavaScript;CSS;PHP;Ruby;SQL;C++;C
 2011,United Kingdom,JavaScript;CSS;PHP;SQL

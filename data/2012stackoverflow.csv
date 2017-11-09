@@ -4486,7 +4486,7 @@ year,location,languages
 2012,Germany,JavaScript;CSS;Python;SQL;Perl
 2012,Other Asia,Java;PHP;Python;Ruby;SQL;C++;C
 2012,Other Europe,Objective-C;C#;C++;C
-2012,Other Europe,"Java;JavaScript;Python;C#, C derivatives (C, C++, Objective C)"
+2012,Other Europe,"Java;JavaScript;Python;C#, C derivatives (C, C++, Objective-C)"
 2012,Other Europe,"JavaScript;CSS;SQL;C#;VB, VB.NET"
 2012,Italy,Java;C#;C++
 2012,India,Java
