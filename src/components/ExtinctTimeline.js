@@ -15,16 +15,21 @@ class ExtinctTimeline extends Component {
 		};
 	}
 
-	componentWillReceiveProps(nextProps) {
-		if (nextProps.extinctData) {
-			this.setState({
-				loading: false,
-				extinctData: nextProps.extinctData,
-				uniqueYears: nextProps.uniqueYears
-			});
-		}
+	componentDidMount() {
+		this.props.getChartData("extinct").then(json => {
+			this.setState(
+				{
+					extinctData: json.data.languages,
+					uniqueYears: json.data.uniqueYears
+				},
+				() => {
+					this.setState({
+						loading: false
+					});
+				}
+			);
+		});
 	}
-
 	options = {
 		tooltips: {
 			callbacks: {

@@ -24,6 +24,29 @@ const MyMapComponent = withGoogleMap(props => {
 });
 
 class ExtinctMap extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			loading: true,
+			extinctData: []
+		};
+	}
+
+	componentDidMount() {
+		this.props.getChartData("extinct").then(json => {
+			this.setState(
+				{
+					extinctData: json.data.languages
+				},
+				() => {
+					this.setState({
+						loading: false
+					});
+				}
+			);
+		});
+	}
 	render() {
 		return (
 			<div className="Extinct map">
@@ -32,11 +55,11 @@ class ExtinctMap extends Component {
 					<Loading />
 				) : (
 					<MyMapComponent
-						markers={this.props.extinctData}
+						markers={this.state.extinctData}
 						isMarkerShown
 						containerElement={<div style={{ height: `500px` }} />}
 						mapElement={<div style={{ height: `100%` }} />}
-					/> // Map with a Marker
+					/>
 				)}
 			</div>
 		);

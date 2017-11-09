@@ -5,7 +5,8 @@ import "../styles/App.css";
 import StackOverflow from "./StackOverflow";
 import Historic from "./Historic";
 import Endangered from "./Endangered";
-import Extinct from "./Extinct";
+import ExtinctMap from "./ExtinctMap";
+import ExtinctTimeline from "./ExtinctTimeline";
 
 const apiRoute = "https://language-diverge.herokuapp.com/";
 
@@ -14,6 +15,7 @@ class App extends Component {
 		super(props);
 
 		this.getChartData = this.getChartData.bind(this);
+		this.chooseChart = this.chooseChart.bind(this);
 	}
 
 	checkStatus(response) {
@@ -34,17 +36,51 @@ class App extends Component {
 			.then(json => json);
 	}
 
+	chooseChart(e) {
+		this.setState({
+			chart: e.target.value
+		});
+	}
+
+	chartSwitch() {
+		switch (this.state.chart) {
+			case "stackoverflow":
+				return <StackOverflow getChartData={this.getChartData} />;
+				break;
+			case "historic":
+				return <Historic getChartData={this.getChartData} />;
+				break;
+			case "endangered":
+				return <Endangered getChartData={this.getChartData} />;
+				break;
+			case "extinctmap":
+				return <ExtinctMap getChartData={this.getChartData} />;
+				break;
+			// case "extincttimeline":
+			// 	return <ExtinctTimeline getChartData={this.getChartData} />;
+			// 	break;
+			default:
+				return <StackOverflow getChartData={this.getChartData} />;
+				break;
+		}
+	}
+
 	render() {
+		console.log(this.state);
 		return (
 			<div className="App">
 				<header className="App-header">
 					<h1 className="App-title">Human vs. Computer Language Diversity</h1>
 				</header>
 				<div className="body-container">
-					<StackOverflow getChartData={this.getChartData} />
-					<Historic getChartData={this.getChartData} />
-					<Endangered getChartData={this.getChartData} />
-					<Extinct getChartData={this.getChartData} />
+					<select onChange={this.chooseChart}>
+						<option value="stackoverflow">StackOverflow</option>
+						<option value="historic">Historic Computer Languages</option>
+						<option value="endangered">Endangered Human Languages</option>
+						<option value="extinctmap">Extinct Human Languages Map</option>
+						{/*<option value="extincttimeline">Extinct Human Languages Timeline</option>*/}
+					</select>
+					{this.state ? this.chartSwitch() : null}
 				</div>
 			</div>
 		);
