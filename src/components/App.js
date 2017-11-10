@@ -71,7 +71,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<header className="App-header">
-					<h1 className="App-title">Human vs. Computer Language Diversity</h1>
+					<h1 className="App-title">Human vs. Programming Languages</h1>
 				</header>
 				<div className="body-container">
 					<div className="nav">
