@@ -37,8 +37,9 @@ class App extends Component {
 	}
 
 	chooseChart(e) {
+		console.log(e.target);
 		this.setState({
-			chart: e.target.value
+			chart: e.target.getAttribute("data-chart")
 		});
 	}
 
@@ -56,9 +57,9 @@ class App extends Component {
 			case "extinctmap":
 				return <ExtinctMap getChartData={this.getChartData} />;
 				break;
-			// case "extincttimeline":
-			// 	return <ExtinctTimeline getChartData={this.getChartData} />;
-			// 	break;
+			case "extincttimeline":
+				return <ExtinctTimeline getChartData={this.getChartData} />;
+				break;
 			default:
 				return <StackOverflow getChartData={this.getChartData} />;
 				break;
@@ -73,13 +74,24 @@ class App extends Component {
 					<h1 className="App-title">Human vs. Computer Language Diversity</h1>
 				</header>
 				<div className="body-container">
-					<select onChange={this.chooseChart}>
-						<option value="stackoverflow">StackOverflow</option>
-						<option value="historic">Historic Computer Languages</option>
-						<option value="endangered">Endangered Human Languages</option>
-						<option value="extinctmap">Extinct Human Languages Map</option>
-						{/*<option value="extincttimeline">Extinct Human Languages Timeline</option>*/}
-					</select>
+					<div className="nav">
+						<div className="nav-items" onClick={this.chooseChart} data-chart="stackoverflow">
+							StackOverflow
+						</div>
+						<div className="nav-items" onClick={this.chooseChart} data-chart="historic">
+							Historic Computer Languages
+						</div>
+						<div className="nav-items" onClick={this.chooseChart} data-chart="endangered">
+							Endangered Human Languages
+						</div>
+						<div className="nav-items" onClick={this.chooseChart} data-chart="extinctmap">
+							Extinct Human Languages Map
+						</div>
+						<div className="nav-items" onClick={this.chooseChart} data-chart="extincttimeline">
+							Extinct Human Languages Timeline
+						</div>
+					</div>
+
 					{this.state ? this.chartSwitch() : null}
 				</div>
 			</div>

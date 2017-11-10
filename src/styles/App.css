@@ -1,28 +1,64 @@
+html,
+body,
+#root {
+	height: 100%;
+	background-color: #f1f5fa;
+}
+
 .App {
 	text-align: center;
 	display: inline-block;
 	width: 100%;
+	height: 100%;
 }
 
 .body-container {
 	display: inline-block;
 	width: 75%;
 	margin: 0 auto;
-	padding-bottom: 100px;
+	height: 100%;
+	background-color: white;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .App-header {
-	background-color: #222;
-	padding: 20px;
+	background-color: #3d0099;
+	display: flex;
+	align-items: center;
+
 	color: white;
+	width: 100%;
+	height: 75px;
+	font-family: "Barlow";
 }
 
 .App-title {
 	font-size: 1.5em;
+	padding-left: 50px;
 }
 
-.testblock {
-	height: 1000px;
+.nav {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	border-bottom: 2px solid #aa80ff;
+}
+
+.nav-items {
+	color: #171001;
+	padding: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.5s;
+	opacity: 0.8;
+}
+
+.nav-items:hover {
+	transform: scale(1.1);
+	opacity: 1;
 }
 
 .chart {
@@ -37,4 +73,5 @@
 .chart-heading {
 	font-size: 1.5em;
 	margin-bottom: 15px;
+	color: #171001;
 }
