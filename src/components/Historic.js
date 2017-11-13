@@ -9,24 +9,18 @@ class Historic extends Component {
 		super(props);
 
 		this.state = {
-			uniqueYears: [],
-			languages: [],
 			loading: true
 		};
 	}
 
 	componentDidMount() {
-		this.props.getChartData("historic").then(json => {
-			this.setState(
-				{
-					uniqueYears: json.data.uniqueYears,
-					languages: json.data.languages
-				},
-				() => {
-					this.setState({ loading: false });
-				}
-			);
-		});
+		if (!this.props.chartData) {
+			this.props.getChartData("historic").then(json => {
+				this.setState({ loading: false });
+			});
+		} else {
+			this.setState({ loading: false });
+		}
 	}
 
 	options = {
@@ -69,8 +63,8 @@ class Historic extends Component {
 				) : (
 					<Bar
 						data={{
-							labels: this.state.uniqueYears,
-							datasets: this.state.languages
+							labels: this.props.chartData.uniqueYears,
+							datasets: this.props.chartData.languages
 						}}
 						options={this.options}
 					/>

@@ -14,6 +14,14 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 
+		this.state = {
+			chart: "stackoverflow",
+			computer: null,
+			historic: null,
+			endangered: null,
+			extinct: null
+		};
+
 		this.getChartData = this.getChartData.bind(this);
 		this.chooseChart = this.chooseChart.bind(this);
 	}
@@ -33,7 +41,11 @@ class App extends Component {
 		return fetch(apiRoute + route)
 			.then(res => this.checkStatus(res))
 			.then(goodRes => goodRes.json())
-			.then(json => json);
+			.then(json => {
+				this.setState({
+					[route]: json.data
+				});
+			});
 	}
 
 	chooseChart(e) {
@@ -46,19 +58,19 @@ class App extends Component {
 	chartSwitch() {
 		switch (this.state.chart) {
 			case "stackoverflow":
-				return <StackOverflow getChartData={this.getChartData} />;
+				return <StackOverflow getChartData={this.getChartData} chartData={this.state.computer} />;
 				break;
 			case "historic":
-				return <Historic getChartData={this.getChartData} />;
+				return <Historic getChartData={this.getChartData} chartData={this.state.historic} />;
 				break;
 			case "endangered":
-				return <Endangered getChartData={this.getChartData} />;
+				return <Endangered getChartData={this.getChartData} chartData={this.state.endangered} />;
 				break;
 			case "extinctmap":
-				return <ExtinctMap getChartData={this.getChartData} />;
+				return <ExtinctMap getChartData={this.getChartData} chartData={this.state.extinct} />;
 				break;
 			case "extincttimeline":
-				return <ExtinctTimeline getChartData={this.getChartData} />;
+				return <ExtinctTimeline getChartData={this.getChartData} chartData={this.state.extinct} />;
 				break;
 			default:
 				return <StackOverflow getChartData={this.getChartData} />;
@@ -67,7 +79,6 @@ class App extends Component {
 	}
 
 	render() {
-		console.log(this.state);
 		return (
 			<div className="App">
 				<header className="App-header">
@@ -75,19 +86,25 @@ class App extends Component {
 				</header>
 				<div className="body-container">
 					<div className="nav">
-						<div className="nav-items" onClick={this.chooseChart} data-chart="stackoverflow">
+						<div
+							className={this.state.chart == "stackoverflow" ? "nav-items active" : "nav-items"}
+							onClick={this.chooseChart}
+							data-chart="stackoverflow">
 							StackOverflow
 						</div>
-						<div className="nav-items" onClick={this.chooseChart} data-chart="historic">
+						<div className={this.state.chart == "historic" ? "nav-items active" : "nav-items"} onClick={this.chooseChart} data-chart="historic">
 							Historic Computer Languages
 						</div>
-						<div className="nav-items" onClick={this.chooseChart} data-chart="endangered">
+						<div className={this.state.chart == "endangered" ? "nav-items active" : "nav-items"} onClick={this.chooseChart} data-chart="endangered">
 							Endangered Human Languages
 						</div>
-						<div className="nav-items" onClick={this.chooseChart} data-chart="extinctmap">
+						<div className={this.state.chart == "extinctmap" ? "nav-items active" : "nav-items"} onClick={this.chooseChart} data-chart="extinctmap">
 							Extinct Human Languages Map
 						</div>
-						<div className="nav-items" onClick={this.chooseChart} data-chart="extincttimeline">
+						<div
+							className={this.state.chart == "extincttimeline" ? "nav-items active" : "nav-items"}
+							onClick={this.chooseChart}
+							data-chart="extincttimeline">
 							Extinct Human Languages Timeline
 						</div>
 					</div>

@@ -9,26 +9,18 @@ class ExtinctTimeline extends Component {
 		super(props);
 
 		this.state = {
-			uniqueYears: [],
-			languages: [],
 			loading: true
 		};
 	}
 
 	componentDidMount() {
-		this.props.getChartData("extinct").then(json => {
-			this.setState(
-				{
-					extinctData: json.data.languages,
-					uniqueYears: json.data.uniqueYears
-				},
-				() => {
-					this.setState({
-						loading: false
-					});
-				}
-			);
-		});
+		if (!this.props.chartData) {
+			this.props.getChartData("extinct").then(json => {
+				this.setState({ loading: false });
+			});
+		} else {
+			this.setState({ loading: false });
+		}
 	}
 	options = {
 		tooltips: {
@@ -62,6 +54,7 @@ class ExtinctTimeline extends Component {
 	};
 
 	render() {
+		console.log(this.props);
 		return (
 			<div className="ExtinctTimeline chart">
 				<div className="chart-heading">Extinct Languages by Year</div>
@@ -70,8 +63,8 @@ class ExtinctTimeline extends Component {
 				) : (
 					<Bar
 						data={{
-							labels: this.state.uniqueYears,
-							datasets: this.state.extinctData
+							labels: this.props.chartData.uniqueYears,
+							datasets: this.props.chartData.languages
 						}}
 						options={this.options}
 					/>

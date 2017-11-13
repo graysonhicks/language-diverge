@@ -37,16 +37,17 @@ class Endangered extends Component {
 	}
 
 	componentDidMount() {
-		this.props.getChartData("endangered").then(json => {
-			this.setState(
-				{
-					endangeredData: json.data
-				},
-				() => {
-					this.setState({ loading: false });
-				}
-			);
-		});
+		if (!this.props.chartData) {
+			this.props.getChartData("endangered").then(json => {
+				this.setState({
+					loading: false
+				});
+			});
+		} else {
+			this.setState({
+				loading: false
+			});
+		}
 	}
 
 	render() {
@@ -57,7 +58,7 @@ class Endangered extends Component {
 					<Loading />
 				) : (
 					<MyMapComponent
-						markers={this.state.endangeredData}
+						markers={this.props.chartData}
 						isMarkerShown
 						containerElement={<div style={{ height: `500px` }} />}
 						mapElement={<div style={{ height: `100%` }} />}

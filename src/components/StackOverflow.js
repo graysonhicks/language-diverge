@@ -13,16 +13,17 @@ class StackOverflow extends Component {
 		};
 	}
 	componentDidMount() {
-		this.props.getChartData("computer").then(json => {
-			this.setState(
-				{
-					soData: json.data
-				},
-				() => {
-					this.setState({ loading: false });
-				}
-			);
-		});
+		if (!this.props.chartData) {
+			this.props.getChartData("computer").then(json => {
+				this.setState({
+					loading: false
+				});
+			});
+		} else {
+			this.setState({
+				loading: false
+			});
+		}
 	}
 
 	options = {
@@ -67,7 +68,7 @@ class StackOverflow extends Component {
 					<Bar
 						data={{
 							labels: ["2011", "2012", "2013", "2014", "2015", "2016"],
-							datasets: this.state.soData
+							datasets: this.props.chartData
 						}}
 						options={this.options}
 					/>

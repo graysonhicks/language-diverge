@@ -18,8 +18,8 @@ body,
 	margin: 0 auto;
 	height: 100%;
 	background-color: white;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding: 15px;
+	margin: 15px;
 }
 
 .App-header {
@@ -44,16 +44,24 @@ body,
 	align-items: center;
 	justify-content: center;
 	background-color: white;
-	border-bottom: 2px solid #aa80ff;
+	border-bottom: 2px solid #1d0772;
+	padding-bottom: 10px;
 }
 
 .nav-items {
 	color: #171001;
 	padding: 20px;
 	font-weight: bold;
+	font-size: 1.25rem;
 	cursor: pointer;
-	transition: all 0.5s;
+	transition: all 0.3s;
 	opacity: 0.8;
+	font-family: "Barlow";
+}
+
+.nav-items.active {
+	background-color: #a087ff;
+	color: white;
 }
 
 .nav-items:hover {

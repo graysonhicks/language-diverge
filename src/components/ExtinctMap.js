@@ -28,34 +28,28 @@ class ExtinctMap extends Component {
 		super(props);
 
 		this.state = {
-			loading: true,
-			extinctData: []
+			loading: true
 		};
 	}
 
 	componentDidMount() {
-		this.props.getChartData("extinct").then(json => {
-			this.setState(
-				{
-					extinctData: json.data.languages
-				},
-				() => {
-					this.setState({
-						loading: false
-					});
-				}
-			);
-		});
+		if (!this.props.chartData) {
+			this.props.getChartData("extinct").then(json => {
+				this.setState({ loading: false });
+			});
+		} else {
+			this.setState({ loading: false });
+		}
 	}
 	render() {
 		return (
 			<div className="Extinct map">
 				<div className="chart-heading">Extinct Languages Across the Globe</div>
-				{this.props.loading ? (
+				{this.state.loading ? (
 					<Loading />
 				) : (
 					<MyMapComponent
-						markers={this.state.extinctData}
+						markers={this.props.chartData.languages}
 						isMarkerShown
 						containerElement={<div style={{ height: `500px` }} />}
 						mapElement={<div style={{ height: `100%` }} />}
